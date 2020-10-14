@@ -1,0 +1,27 @@
+# Read an integer:
+largest = None
+smallest = None
+s = []
+while True:
+    num = input("Enter a number: ")
+    if num == "done" : break
+    try:
+        int(num)
+        s.append(num)
+    except:
+        print('Invalid input')
+        continue
+#conver str to int
+for i in range(0, len(s)): 
+    s[i] = int(s[i]) 
+#smallest
+for value in range(0, len(s)):
+  if smallest is None and largest is None:
+    smallest = s[value]
+    largest = s[value]
+  elif smallest > s[value]:
+    smallest = s[value] 
+  elif largest < s[value]:
+    largest = s[value]
+print('Maximum is', largest)
+print('Minimum is', smallest)
